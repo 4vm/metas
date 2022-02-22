@@ -1,23 +1,23 @@
 import { useState } from "react"
 
 const AddGoal = ({onAddGoal}) => {
-  const [cep, setCep] = useState('')
+  const [goal, setGoal] = useState('')
 
-  const cepChangeHandler = (e) => {
-    setCep(e.target.value)
-    //console.log(cep)
+  const goalChangeHandler = (e) => {
+    setGoal(e.target.value)
+    //console.log(goal)
   }
 
-  const addCepHandler = (e) => {
+  const addGoalHandler = (e) => {
     e.preventDefault()
-    onAddGoal(cep)
-    //console.log(cep)
+    onAddGoal(goal)
+    //console.log(goal)
   }
 
   return (
-    <form onSubmit={addCepHandler}>
+    <form onSubmit={addGoalHandler}>
       <label htmlFor="">Digite uma tarefa: </label>
-      <input type="text" onChange={cepChangeHandler}/>
+      <input type="text" onChange={goalChangeHandler}/>
       <button>Adicionar</button>
     </form>
   )
