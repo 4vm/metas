@@ -1,24 +1,25 @@
 import { useState } from "react"
 
 const AddGoal = ({onAddGoal}) => {
-  const [goal, setGoal] = useState('')
+  const [inputValue, setInputValue] = useState('')
 
-  const goalChangeHandler = (e) => {
-    setGoal(e.target.value)
-    //console.log(goal)
+  const goalChangeHandler = (event) => {
+    setInputValue(event.target.value)
+    //console.log(inputValue)
   }
 
-  const addGoalHandler = (e) => {
-    e.preventDefault()
-    onAddGoal(goal)
-    //console.log(goal)
+  const addGoalHandler = (event) => {
+    event.preventDefault()
+    onAddGoal(inputValue)
+    setInputValue('')
+    //console.log(inputValue)
   }
-
+  
   return (
     <form onSubmit={addGoalHandler}>
-      <label htmlFor="">Digite uma tarefa: </label>
-      <input type="text" onChange={goalChangeHandler}/>
-      <button>Adicionar</button>
+      <label >Digite uma tarefa: </label>
+      <input type="text" value={inputValue} onChange={goalChangeHandler}/>
+      <button type="submit">Adicionar</button>
     </form>
   )
 }
