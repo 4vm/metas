@@ -1,6 +1,8 @@
+import Card from "./UI/Card"
+
 const GoalList = ({list}) => {
   return (
-    <div>
+    <Card>
       <ul>
         {list.map(item =>(
           <li key={item.id}> 
@@ -9,7 +11,7 @@ const GoalList = ({list}) => {
           </li>
         ))}
       </ul>
-    </div>
+    </Card>
   )
 }
 

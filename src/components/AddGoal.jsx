@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import Card from "./UI/Card"
+
 const AddGoal = ({onAddGoal}) => {
   const [inputValue, setInputValue] = useState('')
 
@@ -16,11 +18,13 @@ const AddGoal = ({onAddGoal}) => {
   }
   
   return (
-    <form onSubmit={addGoalHandler}>
-      <label >Digite uma tarefa: </label>
-      <input type="text" value={inputValue} onChange={goalChangeHandler}/>
-      <button type="submit">Adicionar</button>
-    </form>
+    <Card>
+      <form onSubmit={addGoalHandler}>
+        <label >Digite uma tarefa: </label>
+        <input type="text" value={inputValue} onChange={goalChangeHandler}/>
+        <button type="submit">Adicionar</button>
+      </form>
+    </Card>
   )
 }
 
