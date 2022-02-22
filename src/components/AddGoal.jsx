@@ -10,7 +10,7 @@ const AddGoal = ({onAddGoal}) => {
 
   const addGoalHandler = (event) => {
     event.preventDefault()
-    onAddGoal(inputValue)
+    inputValue === '' ? alert('Digite uma tarefa') : onAddGoal(inputValue)
     setInputValue('')
     //console.log(inputValue)
   }

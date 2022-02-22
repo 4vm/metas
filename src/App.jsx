@@ -9,7 +9,7 @@ function App() {
 
   const addGoalHandler = (goalTitle, completed) => {
     setGoal((prevGoalList) => {
-      return [...prevGoalList, { title: goalTitle, completed: completed}]
+      return [...prevGoalList, { title: goalTitle, completed: completed, id: Math.random()}]
     })
   }
 
