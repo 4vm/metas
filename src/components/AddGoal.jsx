@@ -20,6 +20,7 @@ const AddGoal = ({onAddGoal}) => {
   return (
     <Card>
       <form onSubmit={addGoalHandler}>
+        <h1>Metas ✔</h1>
         <label >Digite uma tarefa: </label>
         <input type="text" value={inputValue} onChange={goalChangeHandler}/>
         <button type="submit">Adicionar</button>
