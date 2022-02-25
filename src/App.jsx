@@ -8,9 +8,13 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: grid;
   place-items: center;
-  
+
   min-height: 100vh;
   background-color: hsl(212, 45%, 89%);
+
+  p {
+    font-weight: 700;
+  }
 `
 
 function App() {
@@ -25,7 +29,7 @@ function App() {
   return (
     <Container>
       <AddGoal onAddGoal={addGoalHandler}/>
-      <GoalList list={goal}/>
+      {goal.length === 0 ? <p>Sem metas.</p> : <GoalList list={goal}/>}
     </Container>
   )
 }
